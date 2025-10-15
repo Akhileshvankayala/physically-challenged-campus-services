@@ -66,6 +66,12 @@ A comprehensive web application designed to provide essential services for physi
 
 For security reasons, sensitive credentials (email passwords, API keys, database URLs) have been removed from this public repository. You need to set up your own credentials to run the application.
 
+**🚨 CRITICAL:** GitHub has detected exposed API keys in previous commits. If you fork this repository, make sure to:
+- Never commit your actual API keys to Git
+- Always use environment variables for sensitive data
+- Regularly rotate your API keys and passwords
+- Check GitHub's "Security" tab for any secret scanning alerts
+
 ### Prerequisites
 - Node.js (v16 or higher)
 - Python 3.8+
@@ -130,6 +136,7 @@ RECIPIENT_EMAIL=service_recipient@gmail.com
 1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
 2. Create a new API key
 3. Copy the key to your `.env` file
+4. **NEVER** share or commit this key to version control
 
 #### 3. Supabase Credentials
 1. Create a new project at [Supabase](https://supabase.com)
@@ -142,6 +149,14 @@ RECIPIENT_EMAIL=service_recipient@gmail.com
 - Use different credentials for development and production
 - Regularly rotate your API keys and passwords
 - The `.env` file is already in `.gitignore` for your protection
+- **Check GitHub Security tab** regularly for secret scanning alerts
+- If you accidentally commit secrets, immediately rotate them and contact the service provider
+
+### 🔍 GitHub Secret Scanning
+This repository may trigger GitHub's secret scanning if API keys are detected. This is a security feature that helps prevent credential leaks. If you see alerts:
+1. Immediately rotate the exposed credentials
+2. Update your `.env` file with new credentials
+3. Never ignore these security warnings
 
 ## 📁 Project Structure
 ```

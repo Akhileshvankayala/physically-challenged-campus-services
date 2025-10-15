@@ -290,10 +290,17 @@ def request_service():
 
 # Set up Gemini API Key
 api_key = os.getenv("VITE_API_KEY")
-genai.configure(api_key=api_key)
+if not api_key:
+    logging.warning("Google Gemini API key not found. AI features will not work. Please check your .env file.")
+    print("⚠️  WARNING: Google Gemini API key missing in .env file. AI features disabled.")
+else:
+    genai.configure(api_key=api_key)
 
 # Function to get response from Gemini
 def get_gemini_response(user_input):
+    if not api_key:
+        return "Error: Google Gemini API key not configured. Please check your .env file and add VITE_API_KEY."
+    
     try:
         model = genai.GenerativeModel("gemini-1.5-pro")  # Use a working model from Step 2
         response = model.generate_content(user_input)
@@ -350,6 +357,9 @@ def capture_image():
 
 @app.route('/capture', methods=['POST'])
 def capture():
+    if not api_key:
+        return jsonify({"error": "Google Gemini API key not configured. Please check your .env file."}), 500
+        
     image_path = capture_image()
 
     if image_path:
