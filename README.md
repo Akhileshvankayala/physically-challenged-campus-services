@@ -2,7 +2,7 @@
 
 A comprehensive web application designed to provide essential services for physically challenged individuals on campus. This project combines modern web technologies with AI-powered assistance to create an inclusive and accessible digital platform.
 
-**🔗 Repository:** [https://github.com/Akhileshvankayala/physicallychallenged4](https://github.com/Akhileshvankayala/physicallychallenged4)
+**🔗 Repository:** [https://github.com/Akhileshvankayala/physically-challenged-campus-services](https://github.com/Akhileshvankayala/physically-challenged-campus-services)
 
 ## 🌟 Features
 
@@ -83,8 +83,8 @@ For security reasons, sensitive credentials (email passwords, API keys, database
 ### Frontend Setup
 ```bash
 # Clone the repository
-git clone https://github.com/Akhileshvankayala/physicallychallenged4.git
-cd physicallychallenged4
+git clone https://github.com/Akhileshvankayala/physically-challenged-campus-services.git
+cd physically-challenged-campus-services
 
 # Install dependencies
 npm install
