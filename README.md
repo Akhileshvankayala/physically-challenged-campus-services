@@ -2,6 +2,8 @@
 
 A comprehensive web application designed to provide essential services for physically challenged individuals on campus. This project combines modern web technologies with AI-powered assistance to create an inclusive and accessible digital platform.
 
+**🔗 Repository:** [https://github.com/Akhileshvankayala/physicallychallenged4](https://github.com/Akhileshvankayala/physicallychallenged4)
+
 ## 🌟 Features
 
 ### 🤖 AI-Powered Assistant
