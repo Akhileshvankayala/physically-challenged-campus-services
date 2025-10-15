@@ -22,9 +22,14 @@ CORS(app)  # Enable CORS for all routes
 # Email configuration
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SENDER_EMAIL = "akhileshvankayala158@gmail.com"  # Replace with your Gmail
-SENDER_PASSWORD = "kqcouaozzjghilzr"  # Replace with your App Password without spaces
-RECIPIENT_EMAIL = "thenighthorseanime@gmail.com"  # Replace with recipient's Gmail
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")  # Load from environment variables
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")  # Load from environment variables
+RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")  # Load from environment variables
+
+# Validate email configuration
+if not all([SENDER_EMAIL, SENDER_PASSWORD, RECIPIENT_EMAIL]):
+    logging.warning("Email configuration incomplete. Email services will not work. Please check your .env file.")
+    print("⚠️  WARNING: Email configuration missing in .env file. Email services disabled.")
 
 # Configure logging
 logging.basicConfig(level=logging.WARNING)
